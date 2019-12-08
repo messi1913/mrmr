@@ -16,6 +16,6 @@ import java.time.LocalDateTime;
 @Embeddable
 public class RecordId implements Serializable {
     @Column(length = 11)
-    private int childId;
+    private int profileId;
     private LocalDateTime measureDate;
 }
