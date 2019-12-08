@@ -19,29 +19,19 @@ public class AccountController {
     private final AccountService accountService;
 
     @PostMapping
-    public ResponseEntity createUser(){
-        Account account = Account.builder()
-                .email("messi1913@gmail.com")
-                .userName("상메시")
-                .build();
-        return ResponseEntity.ok(account);
+    public ResponseEntity<AccountDTO> createUser(@RequestBody AccountDTO accountDTO){
+        AccountDTO user = accountService.createUser(accountDTO);
+        return ResponseEntity.ok(user);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity getUser(@PathVariable int id){
-        Account account = Account.builder()
-                .email("messi1913@gmail.com")
-                .userName("상메시")
-                .build();
-        return ResponseEntity.ok(account);
+    public ResponseEntity<AccountDTO> getUser(@PathVariable int id) throws Exception {
+      return ResponseEntity.ok(accountService.getUser(id));
     }
 
     @PutMapping
-    public ResponseEntity modifyUser(){
-        Account account = Account.builder()
-                .email("messi1913@gmail.com")
-                .userName("상메시")
-                .build();
-        return ResponseEntity.ok(account);
+    public ResponseEntity<AccountDTO> modifyUser(@RequestBody AccountDTO accountDTO){
+        AccountDTO savedDto = this.accountService.modifyUser(accountDTO);
+        return ResponseEntity.ok(savedDto);
     }
 }

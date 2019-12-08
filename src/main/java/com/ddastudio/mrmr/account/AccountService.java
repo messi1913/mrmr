@@ -1,6 +1,8 @@
 package com.ddastudio.mrmr.account;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,10 +12,31 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class AccountService {
 
-    public void test(){
+    private final ModelMapper modelMapper;
+    private final AccountRepository repository;
 
+    public AccountDTO getUser(int id) throws Exception {
+        Account account = repository.findByIdAndUseYn(id, "Y").orElseThrow(() -> new Exception(""));
+        return modelMapper.map(account, AccountDTO.class);
     }
 
+    public AccountDTO modifyUser(AccountDTO accountDTO) {
+        Account save = repository.save(modelMapper.map(accountDTO, Account.class));
+        modelMapper.map(save, AccountDTO.class);
+        return accountDTO;
+    }
+
+    public AccountDTO createUser(AccountDTO accountDTO) {
+        //TODO : Validation
+        Account save = repository.save(modelMapper.map(accountDTO, Account.class));
+        modelMapper.map(save, AccountDTO.class);
+        return accountDTO;
+    }
+
+    public Account getAccount(int id) throws Exception {
+        return repository.findByIdAndUseYn(id, "Y").orElseThrow(() -> new Exception(""));
+    }
 }
