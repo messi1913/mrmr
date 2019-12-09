@@ -3,6 +3,7 @@ package com.ddastudio.mrmr.account;
 import java.math.BigDecimal;
 
 import javax.persistence.Embedded;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class SocialAuth {
 
-    @Embedded
+    @EmbeddedId
     private SocialAuthId id;
     private String accessToken;
     private String refreshToken;

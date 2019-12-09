@@ -23,6 +23,8 @@ public class QAccount extends EntityPathBase<Account> {
 
     public final NumberPath<Integer> id = createNumber("id", Integer.class);
 
+    public final StringPath password = createString("password");
+
     public final StringPath provider = createString("provider");
 
     public final StringPath userName = createString("userName");

@@ -19,9 +19,9 @@ public class QRecordId extends BeanPath<RecordId> {
 
     public static final QRecordId recordId = new QRecordId("recordId");
 
-    public final NumberPath<Integer> childId = createNumber("childId", Integer.class);
-
     public final DateTimePath<java.time.LocalDateTime> measureDate = createDateTime("measureDate", java.time.LocalDateTime.class);
+
+    public final NumberPath<Integer> profileId = createNumber("profileId", Integer.class);
 
     public QRecordId(String variable) {
         super(RecordId.class, forVariable(variable));

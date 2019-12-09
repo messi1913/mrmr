@@ -29,5 +29,6 @@ public class Account {
     private String userName;
     @Column(length = 1)
     private String useYn = "Y";
+    private String password;
 
 }
