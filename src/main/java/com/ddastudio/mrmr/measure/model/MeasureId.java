@@ -1,10 +1,11 @@
 package com.ddastudio.mrmr.measure.model;
 
-import lombok.Data;
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import java.io.Serializable;
+
+import lombok.Data;
 
 /**
  * @author messi1913@gmail.com
@@ -13,7 +14,7 @@ import java.io.Serializable;
  */
 @Embeddable
 @Data
-public class MeasureId implements Serializable {
+class MeasureId implements Serializable {
     @Column(length = 4)
     private String publishYear = "2007";
     private Integer gender; // 1:male, 2:female
