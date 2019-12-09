@@ -2,7 +2,6 @@ package com.ddastudio.mrmr.account;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 
