@@ -5,9 +5,11 @@ import javax.persistence.Embeddable;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Embeddable
 @Data
-class SocialAuthId {
+class SocialAuthId implements Serializable {
 
     @Column(length = 11)
     private String accountId;
