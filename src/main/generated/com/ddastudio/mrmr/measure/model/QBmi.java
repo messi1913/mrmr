@@ -34,9 +34,9 @@ public class QBmi extends EntityPathBase<Bmi> {
 
     public final NumberPath<Double> per15 = createNumber("per15", Double.class);
 
-    public final NumberPath<Double> per2 = createNumber("per2", Double.class);
-
     public final NumberPath<Double> per25 = createNumber("per25", Double.class);
+
+    public final NumberPath<Double> per3 = createNumber("per3", Double.class);
 
     public final NumberPath<Double> per5 = createNumber("per5", Double.class);
 

@@ -27,7 +27,7 @@ public class Bmi {
     private double l;
     private double s;
     private double per1;
-    private double per2;
+    private double per3;
     private double per5;
     private double per10;
     private double per15;

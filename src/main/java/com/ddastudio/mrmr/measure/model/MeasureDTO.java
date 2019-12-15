@@ -6,28 +6,30 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
 
 /**
  * @author messi1913@gmail.com
  * @Github http://github.com/messi1913
- * @since 2019/12/04
+ * @since 2019/12/15
  */
-@Entity
 @Data
 @Builder
 @NoArgsConstructor @AllArgsConstructor
-public class Weight {
+public class MeasureDTO {
 
-    @EmbeddedId
-    private MeasureId id;
-
+    private String type;
+    private String publishYear;
+    private Integer gender; // 1:male, 2:female
+    private Integer age;
+    private Integer month;
+    private Integer fromMonth;
+    private Integer toMonth;
+    private Double height;
     private double m;
     private double l;
     private double s;
     private double per1;
-    private double per3;
+    private double per2;
     private double per5;
     private double per10;
     private double per15;
@@ -52,7 +54,4 @@ public class Weight {
     private double stdr2;
     @Column(name = "std_r3")
     private double stdr3;
-
-
-
 }

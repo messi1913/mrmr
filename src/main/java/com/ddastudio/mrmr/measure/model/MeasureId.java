@@ -14,7 +14,7 @@ import lombok.Data;
  */
 @Embeddable
 @Data
-class MeasureId implements Serializable {
+public class MeasureId implements Serializable {
     @Column(length = 4)
     private String publishYear = "2007";
     private Integer gender; // 1:male, 2:female
