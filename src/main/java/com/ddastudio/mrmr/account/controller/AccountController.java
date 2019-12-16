@@ -9,7 +9,7 @@ import org.springframework.hateoas.Link;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 
 /**
  * @author messi1913@gmail.com
@@ -40,7 +40,7 @@ public class AccountController {
         log.info("===== Controller : Retrieve account =====");
         AccountDTO user = this.accountService.getUser(id);
         var model = new AccountModel(user);
-        model.add(linkTo(AccountController.class).withSelfRel());
+        model.add(linkTo(AccountController.class).slash(id).withSelfRel());
         model.add(new Link("/docs/account.html#resources-account-get").withRel("profile"));
         model.add(linkTo(AccountController.class).withRel("update-account"));
         return ResponseEntity.ok(model);
